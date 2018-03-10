@@ -14,6 +14,8 @@
 		DE361DA92053DEC000193242 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DE361DA82053DEC000193242 /* art.scnassets */; };
 		DE361DAD2053DEF200193242 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DAB2053DEF200193242 /* MainViewController.swift */; };
 		DE361DAE2053DEF200193242 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361DAC2053DEF200193242 /* MainViewController.xib */; };
+		DE361DB12053F32900193242 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DB02053F32900193242 /* Avatar.swift */; };
+		DE361DB42053F64300193242 /* Harness.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DB32053F64300193242 /* Harness.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DE361DA82053DEC000193242 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		DE361DAB2053DEF200193242 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE361DAC2053DEF200193242 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		DE361DB02053F32900193242 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		DE361DB32053F64300193242 /* Harness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Harness.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		DE361D952053DE8F00193242 /* ios-test-camera-harness-1 */ = {
 			isa = PBXGroup;
 			children = (
+				DE361DB22053F63100193242 /* Nodes */,
 				DE361DAA2053DEDE00193242 /* Main */,
 				DE361D962053DE8F00193242 /* AppDelegate.swift */,
 				DE361DA82053DEC000193242 /* art.scnassets */,
@@ -95,8 +100,17 @@
 			children = (
 				DE361DAB2053DEF200193242 /* MainViewController.swift */,
 				DE361DAC2053DEF200193242 /* MainViewController.xib */,
+				DE361DB02053F32900193242 /* Avatar.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DE361DB22053F63100193242 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				DE361DB32053F64300193242 /* Harness.swift */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +255,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE361DB42053F64300193242 /* Harness.swift in Sources */,
+				DE361DB12053F32900193242 /* Avatar.swift in Sources */,
 				DE361D972053DE8F00193242 /* AppDelegate.swift in Sources */,
 				DE361DAD2053DEF200193242 /* MainViewController.swift in Sources */,
 			);

@@ -14,22 +14,52 @@ class MainViewController: UIViewController {
     @IBOutlet
     private var sceneView: SCNView?
     
+    private var scene: SCNScene?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        let scene = SCNScene()
+        self.scene = SCNScene()
+        
+        let avatar = Avatar()
+        avatar.position.x = 0
+        avatar.position.z = 0
+        
+        self.scene?.rootNode.addChildNode(avatar)
         
         let camera = SCNNode()
         camera.camera = SCNCamera()
-        camera.position = SCNVector3(x: 0, y: 10, z: 0)
-        camera.look(at: SCNVector3(x: 0, y: 0, z: 0))
-        scene.rootNode.addChildNode(camera)
         
-        self.sceneView?.allowsCameraControl = true
+        // Harness is added to tracking node, camera is added to harness
+        _ = Harness(tracking: avatar, subject: camera)
+        
+        self.addHelperNodes()
+        
         self.sceneView?.showsStatistics = true
         self.sceneView?.backgroundColor = UIColor.black
-        
+
         self.sceneView?.scene = scene
+    }
+    
+    // Helpers to illustrate harness/avatar movement and rotation
+    func addHelperNodes() {
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.cyan
+        
+        let sphereGeometry = SCNSphere(radius: 1.0)
+        sphereGeometry.firstMaterial = material
+        let sphere = SCNNode(geometry: sphereGeometry)
+        sphere.position = SCNVector3(x: 2, y: 0.5, z: -1.5)
+        self.scene?.rootNode.addChildNode(sphere)
+        
+        let coneGeometry = SCNCone(topRadius: 0.01, bottomRadius: 1, height: 1)
+        coneGeometry.firstMaterial = material
+        let cone = SCNNode(geometry: coneGeometry)
+        cone.position = SCNVector3(x: -2, y: 0.5, z: 1.5)
+        self.scene?.rootNode.addChildNode(cone)
+        
+        self.scene?.rootNode.addChildNode(SCNNode(geometry: SCNFloor()))
     }
 }
